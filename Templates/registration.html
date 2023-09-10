@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'CSS/style.css'%}">
+    <title>Registration</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Registration Form</h2>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label for="username">Username:</label>
+            <input type="text" name="username" required><br>
+
+            <label for="first_name">First Name:</label>
+            <input type="text" name="first_name" required><br>
+
+            <label for="last_name">Last Name:</label>
+            <input type="text" name="last_name" required><br>
+
+            <label for="age">Age:</label>
+            <input type="number" name="age" required><br>
+
+            <label for="gender">Gender:</label>
+            <input type="text" name="gender" required><br>
+
+            <label for="city">City:</label>
+            <input type="text" name="city" required><br>
+
+            <label for="phone">Phone:</label>
+            <input type="text" name="phone" required><br>
+
+            <label for="email">Email:</label>
+            <input type="email" name="email" required><br>
+
+            <label for="image">Profile Image:</label>
+            <input type="file" name="image" accept="image/*"><br>
+
+            <label for="address">Address:</label>
+            <input type="text" name="address" required><br>
+
+            <label for="password">Password:</label>
+            <input type="password" name="password" required><br>
+
+            <label for="retype_password">Retype Password:</label>
+            <input type="password" name="retype_password" required><br>
+
+            <input type="submit" value="Register">
+        </form>
+    </div>
+</body>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    
+    /* style.css */
+    
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 0;
+    }
+    
+    h2 {
+        text-align: center;
+        margin-top: 20px;
+    }
+    
+    .container {
+        max-width: 400px;
+        margin: 0 auto;
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    label {
+        font-weight: bold;
+    }
+    
+    input[type="text"],
+    input[type="number"],
+    input[type="email"],
+    input[type="file"],
+    input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    
+    input[type="submit"] {
+        background-color: #007bff;
+        color: #fff;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    
+    input[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+    
+    /* Additional styles for the retype password field */
+    input[name="retype_password"] {
+        border-color: #ff0000; /* Change the border color to red */
+    }
+    
+</style>
+</html>

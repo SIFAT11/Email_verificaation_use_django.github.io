@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Email Verification</title>
+</head>
+<body>
+    <h1>Activate Your Account</h1>
+    <p>Hello {{ user.username }},</p>
+    <p>Click the link below to activate your account:</p>
+    <a href="{{ protocol }}://{{ domain }}{% url 'verify_email' user_id=user.id otp=otp %}">Activate Account</a>
+    <p>If you didn't request this, please ignore this email.</p>
+</body>
+</html>
